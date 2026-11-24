@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<title>Download Linnet</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&family=DM+Mono&display=swap">
+<style>
+:root{
+  --ground:#FBF7EE;--paper:#FFFDF8;--band:#F6F0E2;--ink:#17181C;--ink-muted:#4A4C53;--ink-faint:#6A6C73;
+  --pen:#3A5BA8;--on-pen:#FBF7EE;--pen-tint:rgba(58,91,168,.22);--rule:rgba(23,24,28,.12);
+  --shadow:0 1px 2px rgba(23,24,28,.06),0 8px 24px rgba(23,24,28,.07);
+  --display:"Spectral",Georgia,serif;--sans:"Instrument Sans",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,monospace;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#17181C;--paper:#1F2026;--band:#1C1D22;--ink:#F3EEE4;--ink-muted:#C7C1B4;--ink-faint:#9E998D;
+    --pen:#8FA9E6;--on-pen:#17181C;--pen-tint:rgba(143,169,230,.28);--rule:rgba(243,238,228,.14);
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#17181C;--paper:#1F2026;--band:#1C1D22;--ink:#F3EEE4;--ink-muted:#C7C1B4;--ink-faint:#9E998D;
+  --pen:#8FA9E6;--on-pen:#17181C;--pen-tint:rgba(143,169,230,.28);--rule:rgba(243,238,228,.14);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--ground);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--pen)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* Hero: the woods ring round a clearing */
+.hero{position:relative;min-height:min(92vh,760px);display:grid;place-items:center;overflow:hidden;text-align:center}
+.woods{position:absolute;inset:0;background:var(--ink);opacity:.8;pointer-events:none;
+  -webkit-mask:url(woods.png) center/cover no-repeat;mask:url(woods.png) center/cover no-repeat}
+.clearing{position:relative;z-index:1;padding:72px 24px 96px;max-width:640px}
+.lockup{width:200px;height:auto;display:block;margin:0 auto 28px}
+.lockup.dark{display:none}
+@media (prefers-color-scheme:dark){.lockup.light{display:none}.lockup.dark{display:block}}
+h1{font:400 clamp(30px,5vw,44px)/1.15 var(--display);margin:0 0 6px;text-wrap:balance;background:var(--ground);display:inline-block;padding:0 8px;border-radius:6px}
+h1 em{display:block;color:var(--pen);font-style:italic}
+.lede{color:var(--ink-muted);margin:10px auto 30px;max-width:40ch;background:var(--ground);border-radius:6px;padding:0 6px}
+
+.buttons{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.dl{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-width:220px;min-height:76px;padding:12px 28px;
+  border-radius:999px;text-decoration:none;font:500 21px/1.2 var(--display);border:1.5px solid var(--ink-muted);background:var(--ground);color:var(--ink);
+  box-shadow:var(--shadow);transition:transform .15s ease}
+.dl small{font:400 13px/1.4 var(--sans);color:var(--ink-faint);margin-top:3px}
+.dl.primary{background:var(--pen);border-color:var(--pen);color:var(--on-pen)}
+.dl.primary small{color:var(--on-pen);opacity:.85}
+.dl:hover{transform:translateY(-1px)}
+.dl:focus-visible{outline:3px solid var(--pen-tint);outline-offset:3px}
+.version{margin-top:22px;font:13px var(--mono);color:var(--ink-faint);background:var(--ground);display:inline-block;padding:2px 8px;border-radius:6px}
+
+/* Steps */
+section.steps{padding:72px 0 40px}
+.steps h2{font:400 30px/1.2 var(--display);margin:0 0 6px;text-align:center}
+.steps .sub{text-align:center;color:var(--ink-muted);margin:0 auto 40px;max-width:52ch}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.card{background:var(--paper);border-radius:12px;box-shadow:var(--shadow);padding:28px 28px 24px}
+.card.hl{outline:2px solid var(--pen);outline-offset:-2px}
+.card h3{font:500 23px/1.2 var(--display);margin:0 0 4px}
+.card .for{font-size:14px;color:var(--ink-faint);margin:0 0 18px}
+ol{margin:0;padding:0;list-style:none;counter-reset:s}
+ol li{counter-increment:s;position:relative;padding:0 0 16px 44px}
+ol li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;
+  border:1.5px solid var(--pen);color:var(--pen);font:500 14px/25px var(--sans);text-align:center}
+b{font-weight:600}
+.kbd{font:14px var(--mono);background:var(--band);border-radius:4px;padding:1px 6px;white-space:nowrap}
+.note{font-size:15px;color:var(--ink-muted);border-top:1px solid var(--rule);padding-top:14px;margin:6px 0 0}
+details{margin-top:14px;font-size:15px;color:var(--ink-muted)}
+summary{cursor:pointer;color:var(--pen)}
+code{font:13px var(--mono);background:var(--band);border-radius:4px;padding:2px 6px;word-break:break-all}
+
+footer{padding:40px 0 56px;text-align:center;color:var(--ink-faint);font-size:14px}
+footer p{margin:4px 0}
+
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .clearing{padding:56px 16px 80px}
+  .lockup{width:160px}
+  .dl{min-width:0;width:100%}
+  .card{padding:22px 18px 18px}
+}
+@media (prefers-reduced-motion:reduce){.dl{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="woods" aria-hidden="true"></div>
+  <div class="clearing">
+    <img class="lockup light" src="lockup.svg" alt="Linnet" width="200" height="85">
+    <img class="lockup dark" src="lockup-dark.svg" alt="Linnet" width="200" height="85">
+    <h1><em>Thank you for trying it.</em>Your copy of Linnet is ready.</h1>
+    <p class="lede">Pick your computer below. The steps for opening it the first time are just underneath.</p>
+    <div class="buttons">
+      <a class="dl" id="mac" href="https://github.com/warth0gGit/linnet-releases/releases/latest">Download for Mac<small>macOS 11 or later</small></a>
+      <a class="dl" id="win" href="https://github.com/warth0gGit/linnet-releases/releases/latest">Download for Windows<small>Windows 10 or 11</small></a>
+    </div>
+    <div class="version" id="version">Latest version</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="steps">
+    <h2>Opening Linnet the first time</h2>
+    <p class="sub">Linnet is so new that your computer doesn’t know it yet, so it asks you once to be sure. After that it opens like any other app.</p>
+
+    <div class="cards">
+      <article class="card" id="mac-steps">
+        <h3>On a Mac</h3>
+        <p class="for">About a minute, once.</p>
+        <ol>
+          <li>Open the file you downloaded (it ends in <b>.dmg</b>). A small window appears.</li>
+          <li>Drag the <b>Linnet</b> bird onto the <b>Applications</b> folder.</li>
+          <li>Open <b>Applications</b> and double-click <b>Linnet</b>. Your Mac will say it can’t check the app. Click <b>Done</b> (or <b>OK</b>).</li>
+          <li>Open <b>System Settings</b>, then <b>Privacy &amp; Security</b>. Scroll down and click <b>Open Anyway</b> next to Linnet, then confirm with your password.</li>
+          <li>Linnet opens. From now on it opens normally.</li>
+        </ol>
+        <p class="note">You can eject the Linnet disk on your desktop once it’s in Applications.</p>
+        <details>
+          <summary>It says Linnet “is damaged”</summary>
+          <p>That’s the same check being extra cautious. Open <b>Terminal</b> (in Applications, then Utilities), paste this line and press Return, then open Linnet again:</p>
+          <p><code>xattr -cr /Applications/Linnet.app</code></p>
+        </details>
+      </article>
+
+      <article class="card" id="win-steps">
+        <h3>On Windows</h3>
+        <p class="for">About a minute, once.</p>
+        <ol>
+          <li>Open the file you downloaded (it ends in <b>setup.exe</b>).</li>
+          <li>If a blue box says <b>Windows protected your PC</b>, click <b>More info</b>, then <b>Run anyway</b>.</li>
+          <li>Follow the installer. It only takes a few seconds.</li>
+          <li>Linnet opens. You’ll find it in the Start menu from now on.</li>
+        </ol>
+        <p class="note">If your browser asks whether to keep the download, choose <b>Keep</b>.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>Linnet updates itself. When a new version is ready you’ll see a small blue dot on the Menu.</p>
+  <p>This page is just for testers, so please don’t share it around.</p>
+</footer>
+
+<script>
+(function(){
+  var REPO = "warth0gGit/linnet-releases";
+  var mac = document.getElementById("mac"), win = document.getElementById("win"), ver = document.getElementById("version");
+
+  // Highlight the button for this computer.
+  var ua = navigator.userAgent || "", plat = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "";
+  var isMac = /Mac|iPhone|iPad/i.test(plat) || /Macintosh/.test(ua);
+  var isWin = /Win/i.test(plat) || /Windows/.test(ua);
+  var first = isWin ? win : mac;
+  first.classList.add("primary");
+  if (isWin) { win.parentNode.insertBefore(win, mac); }
+  var card = document.getElementById(isWin ? "win-steps" : (isMac ? "mac-steps" : ""));
+  if (card) {
+    card.classList.add("hl");
+    if (isWin) card.parentNode.insertBefore(card, card.parentNode.firstChild);
+  }
+
+  // Point the buttons at the newest release's files.
+  function apply(rel){
+    var dmg, exe;
+    (rel.assets || []).forEach(function(a){
+      if (/\.dmg$/i.test(a.name)) dmg = a.browser_download_url;
+      if (/-setup\.exe$/i.test(a.name)) exe = a.browser_download_url;
+    });
+    if (dmg) mac.href = dmg;
+    if (exe) win.href = exe;
+    var v = (rel.tag_name || "").replace(/^v/, "");
+    if (v) {
+      var d = rel.published_at ? new Date(rel.published_at).toLocaleDateString(undefined,{day:"numeric",month:"long",year:"numeric"}) : "";
+      ver.textContent = "Version " + v + (d ? " · " + d : "");
+    }
+  }
+  fetch("https://api.github.com/repos/" + REPO + "/releases/latest", {headers:{Accept:"application/vnd.github+json"}})
+    .then(function(r){ if(!r.ok) throw r.status; return r.json(); })
+    .then(apply)
+    .catch(function(){
+      // Fall back to latest.json from the newest release (version only); buttons keep the release page link.
+      fetch("https://github.com/" + REPO + "/releases/latest/download/latest.json").then(function(r){return r.json();})
+        .then(function(j){ if (j.version) ver.textContent = "Version " + j.version; }).catch(function(){});
+    });
+})();
+</script>
+</body>
+</html>
